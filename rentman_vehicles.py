@@ -1,5 +1,3 @@
-import time
-import traceback
 from datetime import datetime, timedelta
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -8,7 +6,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import os  # For environment variables
+from dotenv import load_dotenv
+import time
+import traceback
+import os
+
+load_dotenv()
 
 # Setup Chrome options for kiosk mode
 chrome_options = Options()
@@ -38,11 +41,11 @@ def login():
 
         # Enter username
         username_field = wait.until(EC.presence_of_element_located((By.ID, "email")))
-        username_field.send_keys(os.environ.get('RENTMAN_USERNAME'))  # Use environment variable
+        username_field.send_keys(os.getenv('RENTMAN_USERNAME'))  # Use environment variable
 
         # Enter password
         password_field = driver.find_element(By.ID, "password")
-        password_field.send_keys(os.environ.get('RENTMAN_PASSWORD'))  # Use environment variable
+        password_field.send_keys(os.getenv('RENTMAN_PASSWORD'))  # Use environment variable
 
         # Click login button
         login_button = driver.find_element(By.XPATH, "//button[normalize-space()='Login']")
