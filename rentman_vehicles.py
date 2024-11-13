@@ -19,7 +19,7 @@ chrome_options.add_argument("--app=https://rentmanapp.com/login")  # Opens in Ap
 chrome_options.add_argument("--disable-infobars")
 chrome_options.add_argument("--disable-notifications")
 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])  # Disable "controlled by automated software" infobar
-chrome_options.add_argument("user-data-dir=/home/sivert/.config/google-chrome")
+chrome_options.add_argument("user-data-dir=~/.config/google-chrome")
 chrome_options.add_argument("profile-directory=Default")  # Use "Profile X" if you have multiple profiles
 chrome_options.add_argument("--window-position=100,100")  # Replace with desired x,y coordinates
 chrome_options.add_argument("--window-size=1280,800")  # Replace with desired width and height
