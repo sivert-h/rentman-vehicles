@@ -19,10 +19,10 @@ chrome_options.add_argument("--app=https://rentmanapp.com/login")  # Opens in Ap
 chrome_options.add_argument("--disable-infobars")
 chrome_options.add_argument("--disable-notifications")
 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])  # Disable "controlled by automated software" infobar
-chrome_options.add_argument("user-data-dir=~/.config/google-chrome")
+chrome_options.add_argument("user-data-dir=/home/chromebook41/.config/google-chrome")
 chrome_options.add_argument("profile-directory=Default")  # Use "Profile X" if you have multiple profiles
-chrome_options.add_argument("--window-position=100,100")  # Replace with desired x,y coordinates
-chrome_options.add_argument("--window-size=1280,800")  # Replace with desired width and height
+chrome_options.add_argument("--window-position=0,1120")  # Replace with desired x,y coordinates
+chrome_options.add_argument("--window-size=1080,800")  # Replace with desired width and height
 
 
 # Initialize the Chrome WebDriver with options and service
@@ -30,7 +30,7 @@ driver = webdriver.Chrome(options=chrome_options)
 
 def is_logged_in():
     """Check if already logged in by verifying if the URL contains 'dashboard'."""
-    time.sleep(2)  # Brief pause to allow potential redirection
+    time.sleep(20)  # Brief pause to allow potential redirection
     return "dashboard" in driver.current_url
 
 def login():
@@ -65,7 +65,7 @@ def login():
         driver.quit()
         exit()
 
-def load_page(tab_count=44):
+def load_page(tab_count=40):
     try:
         driver.get("about:blank")
         time.sleep(1)
