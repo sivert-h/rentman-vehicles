@@ -23,8 +23,8 @@ chrome_options.add_argument("--disable-notifications")
 chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])  # Disable "controlled by automated software" infobar
 chrome_options.add_argument(f"user-data-dir={os.path.join(home_dir, '.config/google-chrome')}")
 chrome_options.add_argument("profile-directory=Default")  # Use "Profile X" if you have multiple profiles
-chrome_options.add_argument("--window-position=0,1120")  # Replace with desired x,y coordinates
-chrome_options.add_argument("--window-size=1080,800")  # Replace with desired width and height
+chrome_options.add_argument("--window-position=0,1270")  # Replace with desired x,y coordinates
+chrome_options.add_argument("--window-size=1080,650")  # Replace with desired width and height
 
 
 # Initialize the Chrome WebDriver with options and service
